@@ -49,11 +49,8 @@ if `ps -ef | grep #{node['appservice']['TOMCAT_DIR']} | grep -v grep` != ""
     execute 'Stop Tomcat' do
         command "#{node['appservice']['TOMCAT_DIR']}/bin/shutdown.sh"
     end
-    execute 'Stop Tomcat' do
-        command "#{node['appservice']['TOMCAT_DIR']}/bin/startup.sh"
-    end
-else
-    execute 'Stop Tomcat' do
-        command "#{node['appservice']['TOMCAT_DIR']}/bin/startup.sh"
-    end
+end 
+
+execute 'Start Tomcat' do
+    command "#{node['appservice']['TOMCAT_DIR']}/bin/startup.sh"
 end
