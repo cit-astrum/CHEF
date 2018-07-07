@@ -1,10 +1,7 @@
-puts 'Hello World'
-package 'Install GCC' do
-   package_name 'gcc'
-   action :install
-end
+puts "#{node['hostname']}"
 
-package 'Remove GCC' do 
-   package_name 'gcc'
-   action :remove
-end
+#DBDETAILS = search(:mariadb, "id:prod")
+#DBDETAILS = data_bag('mariadb')
+DBDETAILS = data_bag_item('mariadb', 'prod')
+
+puts "#{DBDETAILS['dbuser']}"

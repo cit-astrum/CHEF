@@ -1,0 +1,6 @@
+{
+  "id" : "dev",
+  "dbname" : "studentdev",
+  "dbuser" : "studentdev",
+  "dbpass" : "Student@1"
+}
